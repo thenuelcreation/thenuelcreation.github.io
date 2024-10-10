@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinix Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Trinix</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div id="cart">
+                <button onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="collection">
+        <h2>Our Collection</h2>
+        <div class="items">
+            <div class="item">
+                <img src="hoodie.jpg" alt="Hoodie">
+                <h3>Trinix Hoodie</h3>
+                <p>$59.99</p>
+                <button onclick="addToCart('Trinix Hoodie', 59.99)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <img src="tshirt.jpg" alt="T-shirt">
+                <h3>Trinix T-shirt</h3>
+                <p>$29.99</p>
+                <button onclick="addToCart('Trinix T-shirt', 29.99)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-section" style="display: none;">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+
+        <!-- PayPal Button Container -->
+        <div id="paypal-button-container"></div>
+
+        <!-- Crypto Payment Option -->
+        <div id="crypto-payment">
+            <h3>Or Pay with Crypto</h3>
+            <p>Send the total amount to this wallet address:</p>
+            <input type="text" id="crypto-address" value="your-crypto-wallet-address" readonly>
+            <button onclick="copyCryptoAddress()">Copy Address</button>
+            <p>Scan the QR code for the wallet:</p>
+            <img src="qr-code.png" alt="Crypto Wallet QR Code">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Trinix Clothing. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
